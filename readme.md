@@ -27,8 +27,6 @@
 # AgileX MuJoCo 仿真基座描述
 本项目是AgileX机械臂系列的MuJoCo仿真基座，会伴随项目的不断开发逐步兼容ROS2控制、SDK控制、强化学习控制，完成sim2sim的顺利过渡，最后完成sim2real。
 
-# 系统架构
-
 # TODO
 
 - [x] 基础环境构建，支持 Piper 机械臂
@@ -37,7 +35,7 @@
 - [ ] 添加 Agilex Nero 机械臂支持
 - [x] 完成ros2功能测试模块控制
 - [ ] 对ros2功能模块进行重构,将功能进行解耦
-- [ ] 添加agilex sdk控制集成
+- [ ] 添加agilex sdk控制集成测试
 - [ ] 推进强化学习部署测试
 - [ ] 推进视觉抓取测试
 - [ ] 推进各类 VA 的部署测试
@@ -80,6 +78,7 @@ make -j4
 ./agilex_mujoco -r piper -s scene.xml -p ros2_control
 ```
 此时运行成功，会启动一个MuJoCo仿真环境，并显示Piper机械臂在仿真环境当中。
+
 ![alt text](images/mujoco_piper.png)
 
 # 参考与感谢
