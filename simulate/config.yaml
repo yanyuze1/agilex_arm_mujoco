@@ -1,3 +1,0 @@
-robot: "piper"  # Robot name, "piper", "nero"
-robot_scene: "scene.xml"
-print_scene_information: 1
