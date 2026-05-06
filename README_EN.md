@@ -34,33 +34,56 @@ This project provides the MuJoCo simulation base for the AgileX robotic arm seri
 - [x] Refactor the base environment to provide a cleaner simulation base
 - [ ] Add a Python version of the simulation base
 - [ ] Add support for the AgileX Nero robotic arm
-- [ ] Complete ROS 2 control modules
-- [ ] Add AgileX SDK control integration
+- [x] Complete the ROS 2 function test module control
+- [ ] Refactor the ROS 2 function modules and decouple their functionality
+- [ ] Add AgileX SDK control integration tests
 - [ ] Advance reinforcement learning deployment tests
 - [ ] Advance vision-based grasping tests
 - [ ] Advance deployment tests for various VAs
 - [ ] Advance deployment tests for various VLAs
 
 # Quick Start
-
 ## Build agilex_arm_mujoco
-
 ```bash
 git clone https://github.com/yanyuze1/agilex_arm_mujoco.git
-cd agilex_arm_mujoco
+cd agilex_arm_mujoco/simulate
+mkdir build && cd build
+cmake ..
+make -j4
+```
+
+## ROS 2 Control Test Plugin
+
+Modify `simulate/CMakeLists.txt`:
+```bash
+option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" OFF)
+# Change to
+option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" ON)
+```
+
+Then build:
+```bash
+git clone https://github.com/yanyuze1/agilex_ws.git
+cd agilex_ws
+colcon build --symlink-install --packages-up-to mujoco_ros2_control agilex_piper_mujoco
+source install/setup.bash
+cd agilex_mujoco/simulate
 mkdir build && cd build
 cmake ..
 make -j4
 ```
 
 ## Run agilex_arm_mujoco
-
 ```bash
+./agilex_mujoco -h
 ./agilex_mujoco -r piper -s scene.xml
+./agilex_mujoco -r piper -s scene.xml -p ros2_control
 ```
 
 If the program runs successfully, it will launch a MuJoCo simulation environment and display the Piper robotic arm inside the simulation.
 
-# References
+![alt text](images/mujoco_piper.png)
+
+# References and Acknowledgements
 
 - https://github.com/unitreerobotics/unitree_mujoco
