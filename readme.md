@@ -74,8 +74,8 @@ make -j4
 ## 运行agilex_arm_mujoco
 ```bash
 ./agilex_mujoco -h
-./agilex_mujoco -r piper -s scene.xml
-./agilex_mujoco -r piper -s scene.xml -p ros2_control
+./agilex_mujoco -r piper -s scene.xml 
+./agilex_mujoco -r piper -s piper_slope_demo.xml  -p ros2_control
 ```
 此时运行成功，会启动一个MuJoCo仿真环境，并显示Piper机械臂在仿真环境当中。
 

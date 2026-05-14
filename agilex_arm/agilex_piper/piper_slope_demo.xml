@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="piper_slope_demo">
+  <compiler angle="radian" meshdir="." />
+  <option cone="elliptic" impratio="200" integrator="implicitfast"/>
+  <statistic center="0.3 0 0.4" extent="1" />
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+    <rgba haze="0.15 0.25 0.35 1" />
+    <global azimuth="120" elevation="-20" />
+  </visual>
+
+  <asset>
+    <!-- Skybox and ground -->
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+
+    <!--  Piper robot materials -->
+    <material name="gray_mat" rgba="0.59 0.59 0.59 1"/>
+    <material name="light_gray_mat" rgba="0.98 0.98 0.98 1"/>
+    <material name="light_medium_gray_mat" rgba="0.85 0.85 0.85 1"/>
+    <material name="dark_gray_mat" rgba="0.086 0.086 0.086 1"/>
+    <material name="darker_gray_mat" rgba="0.14 0.14 0.14 1"/>
+    <material name="white_mat" rgba="1 1 1 1"/>
+    <material name="red_mat" rgba="0.82 0.15 0.15 1"/>
+    <material name="black_mat" rgba="0 0 0 1"/>
+    <material name="light_blue" rgba="0.79 0.82 0.93 1"/>
+
+    <!-- Piper robot meshes (relative to models/demo/ directory, need ../ to go up to models/) -->
+    <mesh file="../agilex_piper/assets/link2_0.obj"/>
+    <mesh file="../agilex_piper/assets/link2_1.obj"/>
+    <mesh file="../agilex_piper/assets/link2_2.obj"/>
+    <mesh file="../agilex_piper/assets/link2_3.obj"/>
+    <mesh file="../agilex_piper/assets/link2_4.obj"/>
+    <mesh file="../agilex_piper/assets/link2_5.obj"/>
+    <mesh file="../agilex_piper/assets/link2_6.obj"/>
+    <mesh file="../agilex_piper/assets/link2_7.obj"/>
+    <mesh file="../agilex_piper/assets/link2_8.obj"/>
+    <mesh file="../agilex_piper/assets/link2_9.obj"/>
+    <mesh file="../agilex_piper/assets/link2_10.obj"/>
+    <mesh file="../agilex_piper/assets/link2_11.obj"/>
+    <mesh file="../agilex_piper/assets/link2_12.obj"/>
+    <mesh file="../agilex_piper/assets/link2_13.obj"/>
+    <mesh file="../agilex_piper/assets/link2_14.obj"/>
+    <mesh file="../agilex_piper/assets/link2_15.obj"/>
+    <mesh file="../agilex_piper/assets/link2_16.obj"/>
+    <mesh file="../agilex_piper/assets/link2_17.obj"/>
+    <mesh file="../agilex_piper/assets/link2_18.obj"/>
+    <mesh file="../agilex_piper/assets/link2_19.obj"/>
+    <mesh file="../agilex_piper/assets/link2_20.obj"/>
+    <mesh file="../agilex_piper/assets/link2_21.obj"/>
+    <mesh file="../agilex_piper/assets/link2_22.obj"/>
+    <mesh file="../agilex_piper/assets/link2_23.obj"/>
+    <mesh file="../agilex_piper/assets/link2_24.obj"/>
+    <mesh file="../agilex_piper/assets/link2_25.obj"/>
+    <mesh file="../agilex_piper/assets/link2_26.obj"/>
+    <mesh file="../agilex_piper/assets/link2_27.obj"/>
+    <mesh file="../agilex_piper/assets/link2_28.obj"/>
+    <mesh file="../agilex_piper/assets/link2_29.obj"/>
+    <mesh file="../agilex_piper/assets/link2_30.obj"/>
+    <mesh file="../agilex_piper/assets/link2_31.obj"/>
+    <mesh file="../agilex_piper/assets/link3_0.obj"/>
+    <mesh file="../agilex_piper/assets/link3_1.obj"/>
+    <mesh file="../agilex_piper/assets/link3_2.obj"/>
+    <mesh file="../agilex_piper/assets/link3_3.obj"/>
+    <mesh file="../agilex_piper/assets/link3_4.obj"/>
+    <mesh file="../agilex_piper/assets/link3_5.obj"/>
+    <mesh file="../agilex_piper/assets/link3_7.obj"/>
+    <mesh file="../agilex_piper/assets/link3_8.obj"/>
+    <mesh file="../agilex_piper/assets/link3_9.obj"/>
+    <mesh file="../agilex_piper/assets/link3_10.obj"/>
+    <mesh file="../agilex_piper/assets/link3_11.obj"/>
+    <mesh file="../agilex_piper/assets/link3_12.obj"/>
+    <mesh file="../agilex_piper/assets/link3_13.obj"/>
+    <mesh file="../agilex_piper/assets/link3_14.obj"/>
+    <mesh file="../agilex_piper/assets/link3_15.obj"/>
+    <mesh file="../agilex_piper/assets/link3_16.obj"/>
+    <mesh file="../agilex_piper/assets/link3_17.obj"/>
+    <mesh file="../agilex_piper/assets/link3_18.obj"/>
+    <mesh file="../agilex_piper/assets/link3_19.obj"/>
+    <mesh file="../agilex_piper/assets/link3_20.obj"/>
+    <mesh file="../agilex_piper/assets/link3_21.obj"/>
+    <mesh file="../agilex_piper/assets/link3_22.obj"/>
+    <mesh file="../agilex_piper/assets/link3_23.obj"/>
+    <mesh file="../agilex_piper/assets/link3_24.obj"/>
+    <mesh file="../agilex_piper/assets/link3_25.obj"/>
+    <mesh file="../agilex_piper/assets/link3_26.obj"/>
+    <mesh file="../agilex_piper/assets/link3_27.obj"/>
+    <mesh file="../agilex_piper/assets/link3_28.obj"/>
+    <mesh file="../agilex_piper/assets/link4_2.obj"/>
+    <mesh file="../agilex_piper/assets/link4_3.obj"/>
+    <mesh file="../agilex_piper/assets/link4_4.obj"/>
+    <mesh file="../agilex_piper/assets/link4_5.obj"/>
+    <mesh file="../agilex_piper/assets/link4_6.obj"/>
+    <mesh file="../agilex_piper/assets/link5_2.obj"/>
+    <mesh file="../agilex_piper/assets/link5_3.obj"/>
+    <mesh file="../agilex_piper/assets/link5_4.obj"/>
+    <mesh file="../agilex_piper/assets/link5_5.obj"/>
+    <mesh file="../agilex_piper/assets/link5_6.obj"/>
+    <mesh file="../agilex_piper/assets/link5_7.obj"/>
+    <mesh file="../agilex_piper/assets/link5_8.obj"/>
+    <mesh name="base_link" file="../agilex_piper/assets/base_link.stl"/>
+    <mesh name="link1" file="../agilex_piper/assets/link1.stl"/>
+    <mesh name="link2" file="../agilex_piper/assets/link2.stl"/>
+    <mesh name="link2_gray" file="../agilex_piper/assets/link2_gray.stl"/>
+    <mesh name="link3" file="../agilex_piper/assets/link3.stl"/>
+    <mesh name="link4" file="../agilex_piper/assets/link4.stl"/>
+    <mesh name="link5" file="../agilex_piper/assets/link5.stl"/>
+    <mesh file="../agilex_piper/assets/link6.stl"/>
+    <mesh file="../agilex_piper/assets/link7.stl"/>
+    <mesh file="../agilex_piper/assets/link8.stl"/>
+  </asset>
+
+  <!-- Include robot body (without assets/compiler which are already defined above) -->
+  <include file="../agilex_piper/piper_body.xml" />
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true" />
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane" />
+  </worldbody>
+</mujoco>

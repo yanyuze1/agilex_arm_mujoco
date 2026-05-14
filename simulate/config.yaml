@@ -1,3 +1,3 @@
 robot: "piper"  # Robot name, "piper", "nero"
-robot_scene: "scene.xml"
+robot_scene: "piper_slope_demo.xml"  # Robot scene file, "scene.xml", "piper_slope_demo.xml"
 print_scene_information: 1
