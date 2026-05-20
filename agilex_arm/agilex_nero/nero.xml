@@ -1,0 +1,133 @@
+<mujoco model="nero_description">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast" cone="elliptic" impratio="10"/>
+
+  <default>
+    <default class="nero">
+      <joint frictionloss="0.3" armature="0.005"/>
+      <position inheritrange="1" forcerange="-100 100"/>
+      <default class="finger">
+        <joint frictionloss="0" type="slide"/>
+        <position forcerange="-10 10"/>
+      </default>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" density="0"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="capsule"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="nero_black" rgba="0.008 0.008 0.008 1"/>
+    <material name="nero_gray" rgba="0.72 0.72 0.72 1"/>
+    <material name="nero_light_gray" rgba="0.85 0.85 0.85 1"/>
+    <material name="nero_red" rgba="1 0 0.00142 1"/>
+    <material name="gripper_black" rgba="0 0 0 1"/>
+    <material name="gripper_gray" rgba="0.11765 0.11765 0.11765 1"/>
+    <material name="gripper_white" rgba="0.98 0.98 0.98 1"/>
+
+    <mesh name="base_link" file="base_link.obj"/>
+    <mesh name="link1" file="link1.obj"/>
+    <mesh name="link2" file="link2.obj"/>
+    <mesh name="link3" file="link3.obj"/>
+    <mesh name="link4" file="link4.obj"/>
+    <mesh name="link5" file="link5.obj"/>
+    <mesh name="link6" file="link6.obj"/>
+    <mesh name="link7" file="link7.obj"/>
+    <mesh name="gripper_flange" content_type="model/stl" file="gripper_flange.stl"/>
+    <mesh name="gripper_base" content_type="model/stl" file="gripper_base.stl"/>
+    <mesh name="gripper_link1" content_type="model/stl" file="gripper_link1.stl"/>
+    <mesh name="gripper_link2" content_type="model/stl" file="gripper_link2.stl"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" childclass="nero">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base_link" material="nero_black"/>
+      <geom type="mesh" mesh="base_link" group="3" rgba="0 0 0 0"/>
+      <body name="link1" pos="0 0 0.138">
+        <inertial pos="-0.000768106 -5.71803e-05 -0.00686373" quat="0.998496 0.0243284 -0.0474034 0.0129308" mass="0.767105" diaginertia="0.000668361 0.000545022 0.000513619"/>
+        <joint name="joint1" pos="0 0 0" axis="0 0 1" range="-2.70526 2.70526" actuatorfrcrange="-100 100"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link1" material="nero_black"/>
+        <geom type="mesh" mesh="link1" group="3" rgba="0 0 0 0"/>
+        <body name="link2" quat="1.89469e-08 1.89469e-08 0.707107 -0.707107">
+          <inertial pos="0.000796867 -0.0789033 0.00111849" quat="0.724173 0.689546 -0.00281155 -0.00963045" mass="0.693819" diaginertia="0.00201137 0.00182229 0.000632162"/>
+          <joint name="joint2" pos="0 0 0" axis="0 0 1" range="-1.74 1.74" actuatorfrcrange="-100 100"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link2" material="nero_gray"/>
+          <geom type="mesh" mesh="link2" group="3" rgba="0 0 0 0"/>
+          <body name="link3" pos="0 -0.31 0" quat="-1.37922e-08 1.37922e-08 -0.707107 0.707107">
+            <inertial pos="0.000145134 -0.00121379 -0.0486114" quat="0.999978 -0.00572699 -0.000503892 -0.00336231" mass="0.672465" diaginertia="0.0034323 0.00338703 0.000288126"/>
+            <joint name="joint3" pos="0 0 0" axis="0 0 1" range="-2.75 2.75" actuatorfrcrange="-100 100"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link3" material="nero_black"/>
+            <geom type="mesh" mesh="link3" group="3" rgba="0 0 0 0"/>
+            <body name="link4" quat="-1.37922e-08 1.37922e-08 -0.707107 0.707107">
+              <inertial pos="-0.000313346 -0.0567519 0.000760561" quat="0.743967 0.668141 -0.00555621 -0.00837616" mass="0.484514" diaginertia="0.000503972 0.000403451 0.00023296"/>
+              <joint name="joint4" pos="0 0 0" axis="0 0 1" range="-1.01 2.14" actuatorfrcrange="-100 100"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link4" material="nero_gray"/>
+              <geom type="mesh" mesh="link4" group="3" rgba="0 0 0 0"/>
+              <body name="link5" pos="0 -0.27001 0" quat="0.5 0.5 -0.5 0.5">
+                <inertial pos="0.00265591 0.00201196 -0.116209" quat="0.994383 -0.0299767 0.0135244 0.100607" mass="0.583684" diaginertia="0.000897188 0.000859677 0.000214923"/>
+                <joint name="joint5" pos="0 0 0" axis="0 0 1" range="-2.75 2.75" actuatorfrcrange="-100 100"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link5" material="nero_gray"/>
+                <geom type="mesh" mesh="link5" group="3" rgba="0 0 0 0"/>
+                <body name="link6" quat="0.5 0.5 -0.5 0.5">
+                  <inertial pos="9.50151e-05 0.00107831 -0.00019111" quat="0.708463 0.705104 -0.0268147 0.0137484" mass="0.314041" diaginertia="6.02857e-05 5.75589e-05 4.69904e-05"/>
+                  <joint name="joint6" pos="0 0 0" axis="0 0 1" range="-0.73 0.95" actuatorfrcrange="-100 100"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link6" material="nero_black"/>
+                  <geom type="mesh" mesh="link6" group="3" rgba="0 0 0 0"/>
+                  <body name="link7" pos="0 -0.0235 0" quat="0.707107 0.707107 0 0">
+                    <inertial pos="0.0334426 0.00319745 0.00506603" quat="0.515963 0.52091 0.390879 0.556462" mass="0.497712" diaginertia="0.00106912 0.000845049 0.000513009"/>
+                    <joint name="joint7" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-100 100"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link7" material="nero_black"/>
+                    <geom type="mesh" mesh="link7" group="3" rgba="0 0 0 0"/>
+                    <geom pos="0.032 0 -0.0235" quat="0.499998 -0.5 0.500002 -0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="gripper_flange"/>
+                    <geom pos="0.032 0 -0.0235" quat="0.499998 -0.5 0.500002 -0.5" type="mesh" mesh="gripper_flange"/>
+                    <geom pos="0.0375 -2.02026e-08 -0.0235" quat="0.499998 -0.5 0.500002 -0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="gripper_base"/>
+                    <geom pos="0.0375 -2.02026e-08 -0.0235" quat="0.499998 -0.5 0.500002 -0.5" type="mesh" mesh="gripper_base"/>
+                    <body name="gripper_link1" pos="0.1733 -5.19024e-07 -0.0235005" quat="-1.27026e-06 0.707108 0.707105 -1.30815e-06">
+                      <inertial pos="0.000651232 -0.049193 0.00972259" quat="0.477798 0.572974 -0.518028 0.418398" mass="0.025" diaginertia="7.74531e-05 7.36783e-05 5.0886e-06"/>
+                      <joint name="gripper_joint1" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.05" actuatorfrcrange="-10 10"/>
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="gripper_link1"/>
+                      <geom type="mesh" mesh="gripper_link1"/>
+                    </body>
+                    <body name="gripper_link2" pos="0.1733 -5.19024e-07 -0.0235005" quat="0.707105 -1.30815e-06 1.30815e-06 -0.707108">
+                      <inertial pos="0.000651232 -0.049193 0.00972259" quat="0.477798 0.572974 -0.518028 0.418398" mass="0.025" diaginertia="7.74531e-05 7.36783e-05 5.0886e-06"/>
+                      <joint name="gripper_joint2" pos="0 0 0" axis="0 0 -1" type="slide" range="-0.05 0" actuatorfrcrange="-10 10"/>
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="gripper_link2"/>
+                      <geom type="mesh" mesh="gripper_link2"/>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base_link" body2="link1"/>
+  </contact>
+  
+  <equality>
+    <joint joint1="gripper_joint2" joint2="gripper_joint1" polycoef="0 -1 0 0 0"/>
+  </equality>
+
+  <actuator>
+    <position name="joint1" joint="joint1" class="nero" kp="80" kv="5"/>
+    <position name="joint2" joint="joint2" class="nero" kp="80" kv="5"/>
+    <position name="joint3" joint="joint3" class="nero" kp="80" kv="5"/>
+    <position name="joint4" joint="joint4" class="nero" kp="40" kv="5"/>
+    <position name="joint5" joint="joint5" class="nero" kp="10" kv="1.5"/>
+    <position name="joint6" joint="joint6" class="nero" kp="10" kv="1.5"/>
+    <position name="joint7" joint="joint7" class="nero" kp="10" kv="1.5"/>
+    <position name="gripper" joint="gripper_joint1" class="finger" kp="40" kv="5"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0 0 0 0" ctrl="0 0 0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>

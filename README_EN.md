@@ -11,7 +11,7 @@
       </td>
       <td align="center">
         <a href="https://global.agilex.ai/products/nero">
-          <img src="https://global.agilex.ai/cdn/shop/files/7_-_3.png?v=1765176593&amp;width=1946" alt="AgileX NERO" width="280" />
+          <img src="images/nero.png" alt="AgileX NERO" width="280" />
         </a>
         <br />
         <sub><strong>AgileX NERO</strong></sub>
@@ -33,7 +33,7 @@ This project provides the MuJoCo simulation base for the AgileX robotic arm seri
 - [x] Build the base environment with Piper robotic arm support
 - [x] Refactor the base environment to provide a cleaner simulation base
 - [ ] Add a Python version of the simulation base
-- [ ] Add support for the AgileX Nero robotic arm
+- [x] Add support for the AgileX Nero robotic arm
 - [x] Complete the ROS 2 function test module control
 - [ ] Refactor the ROS 2 function modules and decouple their functionality
 - [ ] Add AgileX SDK control integration tests
@@ -77,12 +77,15 @@ make -j4
 ```bash
 ./agilex_mujoco -h
 ./agilex_mujoco -r piper -s scene.xml
-./agilex_mujoco -r piper -s scene.xml -p ros2_control
+./agilex_mujoco -r nero -s scene.xml
+./agilex_mujoco -r piper -s piper_slope_demo.xml -p ros2_control
 ```
 
-If the program runs successfully, it will launch a MuJoCo simulation environment and display the Piper robotic arm inside the simulation.
+If the program runs successfully, it will launch a MuJoCo simulation environment and display the robotic arm inside the simulation.
 
 ![alt text](images/mujoco_piper.png)
+
+![alt text](images/mujoco_nero.png)
 
 # References and Acknowledgements
 
