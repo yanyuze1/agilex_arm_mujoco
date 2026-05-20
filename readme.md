@@ -84,5 +84,7 @@ make -j4
 
 ![alt text](images/mujoco_nero.png)
 
+# 模块测试说明
+在进行mujoco仿真环境的功能模块测试时可参考文档：[功能模块测试使用说明](https://my.feishu.cn/wiki/KINYwRU3fiqODOkH9NFcOem9nQe?fromScene=spaceOverview)，也可以看到Agilex机械臂系列项目仓库：[Agilex机械臂系列](https://my.feishu.cn/wiki/FDdfwYpA9iDyUDkybMacw9HDnhg)
 # 参考与感谢
 - https://github.com/unitreerobotics/unitree_mujoco

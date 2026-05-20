@@ -87,6 +87,10 @@ If the program runs successfully, it will launch a MuJoCo simulation environment
 
 ![alt text](images/mujoco_nero.png)
 
+# Module Testing Notes
+
+When testing functional modules in the MuJoCo simulation environment, refer to the documentation: [Functional Module Testing Guide](https://my.feishu.cn/wiki/KINYwRU3fiqODOkH9NFcOem9nQe?fromScene=spaceOverview). You can also view the AgileX robotic arm series project repository here: [AgileX Robotic Arm Series](https://my.feishu.cn/wiki/FDdfwYpA9iDyUDkybMacw9HDnhg).
+
 # References and Acknowledgements
 
 - https://github.com/unitreerobotics/unitree_mujoco
