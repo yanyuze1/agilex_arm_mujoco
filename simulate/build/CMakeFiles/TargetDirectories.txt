@@ -1,6 +1,0 @@
-/home/agilex/project/agilex_mujoco/agilex_arm_mujoco/simulate/build/CMakeFiles/uninstall.dir
-/home/agilex/project/agilex_mujoco/agilex_arm_mujoco/simulate/build/CMakeFiles/agilex_mujoco_uninstall.dir
-/home/agilex/project/agilex_mujoco/agilex_arm_mujoco/simulate/build/CMakeFiles/agilex_mujoco.dir
-/home/agilex/project/agilex_mujoco/agilex_arm_mujoco/simulate/build/CMakeFiles/test.dir
-/home/agilex/project/agilex_mujoco/agilex_arm_mujoco/simulate/build/CMakeFiles/edit_cache.dir
-/home/agilex/project/agilex_mujoco/agilex_arm_mujoco/simulate/build/CMakeFiles/rebuild_cache.dir
