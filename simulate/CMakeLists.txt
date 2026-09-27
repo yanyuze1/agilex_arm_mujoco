@@ -4,7 +4,7 @@ project(agilex_mujoco)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(AGILEX_PLUGIN_SRC)
-option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" ON)
+option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" OFF)
 
 if(CMAKE_BUILD_TYPE MATCHES "Debug")
   message(STATUS "Build type: Debug")

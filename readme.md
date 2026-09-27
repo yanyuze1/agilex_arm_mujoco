@@ -53,13 +53,7 @@ make -j4
 
 ## ros2 control测试插件
 
-对simulate/CMakeLists.txt进行修改
-```bash
-option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" OFF)
-#改为
-option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" ON)
-```
-进行编译
+ROS 2 control插件默认关闭。需要启用时，先编译并source ROS 2工作空间，再通过`-DAGILEX_ENABLE_ROS2_CONTROL=ON`配置：
 ```bash
 git clone https://github.com/yanyuze1/agilex_ws.git
 cd agilex_ws
@@ -67,7 +61,7 @@ colcon build --symlink-install --packages-up-to mujoco_ros2_control agilex_piper
 source install/setup.bash
 cd agilex_mujoco/simulate
 mkdir build && cd build
-cmake ..
+cmake .. -DAGILEX_ENABLE_ROS2_CONTROL=ON
 make -j4
 ```
 
