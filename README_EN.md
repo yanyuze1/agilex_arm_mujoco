@@ -54,14 +54,7 @@ make -j4
 
 ## ROS 2 Control Test Plugin
 
-Modify `simulate/CMakeLists.txt`:
-```bash
-option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" OFF)
-# Change to
-option(AGILEX_ENABLE_ROS2_CONTROL "Build ROS2 control plugin" ON)
-```
-
-Then build:
+The ROS 2 control plugin is disabled by default. To enable it, first build and source the ROS 2 workspace, then configure with `-DAGILEX_ENABLE_ROS2_CONTROL=ON`:
 ```bash
 git clone https://github.com/yanyuze1/agilex_ws.git
 cd agilex_ws
@@ -69,7 +62,7 @@ colcon build --symlink-install --packages-up-to mujoco_ros2_control agilex_piper
 source install/setup.bash
 cd agilex_mujoco/simulate
 mkdir build && cd build
-cmake ..
+cmake .. -DAGILEX_ENABLE_ROS2_CONTROL=ON
 make -j4
 ```
 
